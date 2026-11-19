@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hands-On Lab: Invoice Exception Agent (n8n Low-Code)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="logo-row">
+      <img src="joule.svg" alt="Joule Studio">
+      <span>Joule <em>Studio</em></span>
+    </div>
+    <h1>Invoice Exception Agent</h1>
+    <p class="sub">Build an n8n workflow that reads blocked supplier invoices, analyses block reasons with AI, and routes AP Clerk approvals via SAP Task Center &mdash; all from a single prompt.<br><br>Joule Studio &middot; CS&amp;D Multiplier Workshop &middot; n8n Low-Code Path</p>
+    <div class="chips">
+      <span class="chip">&#127666; Rotational Workshop 2026</span>
+      <span class="chip">&#9889; n8n Low-Code Path</span>
+      <span class="chip">&#128101; CS&amp;D Participants</span>
+      <span class="chip">&#127908; Onsite Speakers</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <div class="section-header">
+      <h2>About This Workshop</h2>
+      <p>Build a production-ready AI workflow in Joule Studio using the n8n low-code path &mdash; no CLI required</p>
+    </div>
+    <div class="card">
+      <p>In this hands-on session you will use <strong>Joule Studio</strong> to build a complete <strong>Invoice Exception Agent</strong> from a single natural-language prompt. Joule Studio&#8217;s intent-based development (IBD) flow turns your description into a fully wired n8n workflow &mdash; with a webhook trigger, SAP S/4HANA connectivity, an embedded AI agent, SAP Task Center human-in-the-loop approval, and automated invoice release.</p>
+      <br>
+      <p>You will watch Joule Studio take your intent through each stage automatically:</p>
+      <div class="flow-bar">
+        <div class="flow-pill">Intent Analysis</div><span class="flow-arrow">&#8594;</span>
+        <div class="flow-pill">Process Hierarchy</div><span class="flow-arrow">&#8594;</span>
+        <div class="flow-pill">Recommended Solution</div><span class="flow-arrow">&#8594;</span>
+        <div class="flow-pill">PRD / Requirements</div><span class="flow-arrow">&#8594;</span>
+        <div class="flow-pill">Solution Architecture</div><span class="flow-arrow">&#8594;</span>
+        <div class="flow-pill">n8n Workflow</div><span class="flow-arrow">&#8594;</span>
+        <div class="flow-pill">Test</div>
+      </div>
+      <p>The result is a deployable n8n workflow on SAP Business AI Platform &mdash; built entirely from a prompt, reviewed and approved at each stage by you.</p>
+    </div>
+  </section>
+
+  <section id="requirements">
+    <div class="section-header">
+      <h2>What You Will Build</h2>
+      <p>A six-requirement end-to-end workflow covering the full invoice exception management lifecycle</p>
+    </div>
+    <div class="card">
+      <div class="prereq-list">
+        <div class="prereq-item"><div class="prereq-icon">&#128279;</div><div><strong>R1 &mdash; Webhook Trigger from Joule Agent</strong><p>The workflow is triggered by a Joule Agent from SAP Joule chat via a webhook.</p></div></div>
+        <div class="prereq-item"><div class="prereq-icon">&#128196;</div><div><strong>R2 &mdash; Read All Blocked Supplier Invoices from S/4HANA</strong><p>Fetches all blocked supplier invoices from SAP S/4HANA Cloud using the SAP MCP Client.</p></div></div>
+        <div class="prereq-item"><div class="prereq-icon">&#129302;</div><div><strong>R3 &mdash; AI-Powered Block Reason Analysis per Invoice</strong><p>A SAP Agent analyses each invoice to identify the block reason across Purchase Order, Goods Receipt, and Supplier Contract.</p></div></div>
+        <div class="prereq-item"><div class="prereq-icon">&#9989;</div><div><strong>R4 &mdash; AP Clerk Approval via SAP Task Center</strong><p>The agent&#8217;s findings are presented to the AP Clerk in SAP Task Center using SAP Human-in-the-Loop.</p></div></div>
+        <div class="prereq-item"><div class="prereq-icon">&#128640;</div><div><strong>R5 &mdash; Invoice Release in S/4HANA on Approval</strong><p>If the AP Clerk approves, the invoice is released in S/4HANA Cloud via the SAP MCP Client.</p></div></div>
+        <div class="prereq-item"><div class="prereq-icon">&#128172;</div><div><strong>R6 &mdash; Summary Response Returned to Joule Agent</strong><p>A summary of the outcome is returned to the Joule Agent for display in SAP Joule chat.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prereqs">
+    <div class="section-header">
+      <h2>Prerequisites</h2>
+      <p>Everything you need before the workshop session begins</p>
+    </div>
+    <div class="card">
+      <h3>Technical Requirements</h3>
+      <div class="prereq-list" style="margin-top:12px;">
+        <div class="prereq-item"><div class="prereq-icon">&#127760;</div><div><strong>Google Chrome</strong><p>Use Chrome for the best Joule Studio experience.</p></div></div>
+        <div class="prereq-item"><div class="prereq-icon">&#9729;&#65039;</div><div><strong>Joule Studio Access (Dev Landscape)</strong><p>Navigate to <a href="https://0210933322.eu12.sapdas-dev.cloud.sap/new/build" target="_blank">https://0210933322.eu12.sapdas-dev.cloud.sap/new/build</a> in Chrome. You need a valid Joule Studio account.</p></div></div>
+        <div class="prereq-item"><div class="prereq-icon">&#128231;</div><div><strong>Your Email Address</strong><p>Required to configure the SAP Task Center node &mdash; you will receive the AP Clerk approval notification at this address.</p></div></div>
+        <div class="prereq-item"><div class="prereq-icon">&#128274;</div><div><strong>SAP Corporate Network or VPN</strong><p>Required to reach the Joule Studio dev landscape and S/4HANA Cloud system.</p></div></div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px;">
+      <h3>Personal Prerequisites</h3>
+      <ul style="margin-top:10px;">
+        <li>No prior n8n or workflow development experience needed &mdash; Joule Studio generates the workflow for you</li>
+        <li>Basic familiarity with SAP invoice management concepts is a plus, not a requirement</li>
+        <li>No code editor or CLI required &mdash; everything runs in the browser</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="scenarios">
+    <div class="section-header">
+      <h2>Sample Scenarios</h2>
+      <p>Seven ready-to-use prompt scenarios covering a range of n8n workflow patterns &mdash; explore independently after the main exercise</p>
+    </div>
+    <div class="scenario-grid">
+      <div class="scenario-card"><div style="display:flex;align-items:center;gap:10px;"><div class="scenario-num">1</div><div class="scenario-title">Workflow with SAP Task Center Node</div></div><div class="scenario-desc">Webhook-triggered workflow that creates a Task Center notification with a title from the incoming data.</div><a href="scenarios.html#s1" style="font-size:.8rem;font-weight:600;margin-top:4px;">View prompt &#8594;</a></div>
+      <div class="scenario-card"><div style="display:flex;align-items:center;gap:10px;"><div class="scenario-num">2</div><div class="scenario-title">Workflow with AI Core Node</div></div><div class="scenario-desc">Send text to SAP AI Core for sentiment analysis (positive / negative / neutral) and return the result via webhook.</div><a href="scenarios.html#s2" style="font-size:.8rem;font-weight:600;margin-top:4px;">View prompt &#8594;</a></div>
+      <div class="scenario-card"><div style="display:flex;align-items:center;gap:10px;"><div class="scenario-num">3</div><div class="scenario-title">Workflow calling existing LoB Agent (A2A)</div></div><div class="scenario-desc">Call the Sourcing Event Agent and return its response without logging into another system.</div><a href="scenarios.html#s3" style="font-size:.8rem;font-weight:600;margin-top:4px;">View prompt &#8594;</a></div>
+      <div class="scenario-card"><div style="display:flex;align-items:center;gap:10px;"><div class="scenario-num">4</div><div class="scenario-title">Workflow calling existing Custom Agent (A2A)</div></div><div class="scenario-desc">Pass a number in; a deployed Random Number Agent supplies the second value; return the combined total.</div><a href="scenarios.html#s4" style="font-size:.8rem;font-weight:600;margin-top:4px;">View prompt &#8594;</a></div>
+      <div class="scenario-card"><div style="display:flex;align-items:center;gap:10px;"><div class="scenario-num">5</div><div class="scenario-title">Workflow calling Custom Agent (same solution)</div></div><div class="scenario-desc">Webhook accepts an array of numbers; a same-solution agent calculates the highest common factor.</div><a href="scenarios.html#s5" style="font-size:.8rem;font-weight:600;margin-top:4px;">View prompt &#8594;</a></div>
+      <div class="scenario-card"><div style="display:flex;align-items:center;gap:10px;"><div class="scenario-num">6</div><div class="scenario-title">Custom Agent calling existing workflow</div></div><div class="scenario-desc">A Joule assistant calls a deployed workflow and confirms it responded &mdash; instant health check through conversation.</div><a href="scenarios.html#s6" style="font-size:.8rem;font-weight:600;margin-top:4px;">View prompt &#8594;</a></div>
+      <div class="scenario-card"><div style="display:flex;align-items:center;gap:10px;"><div class="scenario-num">7</div><div class="scenario-title">Custom Agent calling workflow in same solution</div></div><div class="scenario-desc">An agent calls a same-solution workflow that generates a random integer, then determines even or odd.</div><a href="scenarios.html#s7" style="font-size:.8rem;font-weight:600;margin-top:4px;">View prompt &#8594;</a></div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <div class="cta-inner">
+      <h2>Ready to Build?</h2>
+      <p>Follow the step-by-step tutorial to build the Invoice Exception Agent<br>from a single prompt using Joule Studio&#8217;s n8n low-code path.</p>
+      <div class="btn-row">
+        <a href="tutorial.html" class="btn-cta">Start the Tutorial &#8594;</a>
+        <a href="scenarios.html" class="btn-cta btn-cta--outline">Browse Scenarios &#8594;</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>Copyright &copy; 2026 SAP SE or an SAP affiliate company. All rights reserved. &nbsp;&middot;&nbsp; Licensed under the Apache Software License, version 2.0.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Scenario Prompts for n8n &mdash; Joule Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-logo">
+    <img src="joule.svg" alt="Joule Studio">Joule <em>Studio</em>
+  </a>
+  <span class="topbar-sep">/</span>
+  <span class="topbar-title">Sample Scenario Prompts for n8n</span>
+  <a href="index.html" class="topbar-back">&#8592; Back to Workshop</a>
+</nav>
+
+<main style="max-width:900px;margin:0 auto;padding:52px 24px 80px;">
+
+  <div style="margin-bottom:40px;">
+    <h1 style="font-size:2rem;font-weight:800;letter-spacing:-.03em;color:var(--text);margin-bottom:10px;">Sample Scenario Prompts for n8n</h1>
+    <p style="color:var(--text-muted);font-size:1rem;max-width:620px;">Seven ready-to-use prompts covering the most common n8n workflow patterns in Joule Studio. Copy a prompt, paste it in Joule Studio, and start building.</p>
+  </div>
+
+  <div class="sc-card" id="s1">
+    <div class="sc-card-header">
+      <div class="sc-num">1</div>
+      <div class="sc-meta"><div class="sc-label">Scenario 1</div><h3>Workflow with SAP Task Center Node</h3></div>
+    </div>
+    <div class="sc-section-title">Business Use Case</div>
+    <p style="font-size:.88rem;margin-bottom:14px;">When an external system submits a request via webhook, the workflow automatically creates a personal notification in SAP Task Center for the responsible person &mdash; with the request title pre-populated from the incoming data. Example: a contract review request arrives from an external portal and instantly appears as a Task Center action item for the contract owner, with no manual entry.</p>
+    <div class="sc-section-title">Technical Prompt <span class="tag-fast">Fast Track</span></div>
+    <div class="prompt-block">Create a workflow with an SAP Task Center node that always sends a notification to &lt;give test email id&gt;. Use a webhook trigger. The webhook trigger provides the title the notification will have. Fast Track. No questions asked.</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">&#128203; Copy Prompt</button>
+  </div>
+
+  <div class="sc-card" id="s2">
+    <div class="sc-card-header">
+      <div class="sc-num">2</div>
+      <div class="sc-meta"><div class="sc-label">Scenario 2</div><h3>Workflow with AI Core Node</h3></div>
+    </div>
+    <div class="sc-section-title">Business Use Case</div>
+    <p style="font-size:.88rem;margin-bottom:14px;">A business user submits a piece of text &mdash; a customer review, a survey response, or an employee comment &mdash; via API call. The workflow sends it to SAP AI Core, classifies the sentiment as positive, negative, or neutral, and returns the result immediately. The support or HR team gets an instant signal without reading every submission manually.</p>
+    <div class="sc-section-title">Technical Prompt <span class="tag-fast">Fast Track</span></div>
+    <div class="prompt-block">Please create a workflow. The workflow should have a webhook to start the workflow and take input on which via AI core, it can do sentiment analysis and respond back with the sentiment from positive, negative, neutral. Fast Track. Start with intent-analysis.</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">&#128203; Copy Prompt</button>
+  </div>
+
+  <div class="sc-card" id="s3">
+    <div class="sc-card-header">
+      <div class="sc-num">3</div>
+      <div class="sc-meta"><div class="sc-label">Scenario 3</div><h3>Workflow calling existing LoB Agent (A2A)</h3></div>
+    </div>
+    <div class="sc-section-title">Business Use Case</div>
+    <p style="font-size:.88rem;margin-bottom:14px;">A procurement coordinator triggers a workflow to query the Sourcing Event Agent &mdash; an existing SAP LoB agent &mdash; and get back information about its capabilities or active sourcing events. The result is returned directly, letting the team understand what the agent can do without logging into another system.</p>
+    <div class="sc-section-title">Technical Prompt</div>
+    <div class="prompt-block">Create a workflow that calls the Sourcing Event Agent with the SAP Agent Node. It should call it with the query "What's your functionality" and return the result. The workflow should have a webhook.</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">&#128203; Copy Prompt</button>
+  </div>
+
+  <div class="sc-card" id="s4">
+    <div class="sc-card-header">
+      <div class="sc-num">4</div>
+      <div class="sc-meta"><div class="sc-label">Scenario 4</div><h3>Workflow calling existing Custom Agent (A2A)</h3></div>
+    </div>
+    <div class="sc-section-title">Business Use Case</div>
+    <p style="font-size:.88rem;margin-bottom:14px;">A finance analyst submits a base figure via an API call. The workflow fetches a second value from a separately deployed agent and returns the combined total &mdash; reusing a specialist agent already in the system rather than rebuilding its logic. The workflow only owns what is new.</p>
+    <div class="sc-section-title">Technical Prompt <span class="tag-fast">Fast Track</span></div>
+    <div class="prompt-block">I need a workflow that adds two numbers. One number should be passed as input to the workflow. The other number should be generated by the number generator agent already in the system called "Random Number Agent". Fast track. Make no mistakes.</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">&#128203; Copy Prompt</button>
+  </div>
+
+  <div class="sc-card" id="s5">
+    <div class="sc-card-header">
+      <div class="sc-num">5</div>
+      <div class="sc-meta"><div class="sc-label">Scenario 5</div><h3>Workflow calling Custom Agent (calls MCP) in same solution (A2A)</h3></div>
+    </div>
+    <div class="sc-section-title">Business Use Case</div>
+    <p style="font-size:.88rem;margin-bottom:14px;">An operations planner submits a list of order quantities from different customers. The workflow calls a same-solution intelligent agent that calculates the highest common factor across all values &mdash; identifying the largest batch size that evenly satisfies every order. The agent and workflow are packaged and deployed together as one solution.</p>
+    <div class="sc-section-title">Technical Prompt</div>
+    <div class="prompt-block">Create a workflow that starts with a webhook. The webhook takes an array of numbers. The workflow then calls a custom agent in the solution to analyze this array and get the highest common factor of the numbers. The workflow should finally respond with the output of the agent.</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">&#128203; Copy Prompt</button>
+  </div>
+
+  <div class="sc-card" id="s6">
+    <div class="sc-card-header">
+      <div class="sc-num">6</div>
+      <div class="sc-meta"><div class="sc-label">Scenario 6</div><h3>Custom Agent calling existing workflow</h3></div>
+    </div>
+    <div class="sc-section-title">Business Use Case</div>
+    <p style="font-size:.88rem;margin-bottom:14px;">A Joule assistant is asked whether a backend processing workflow is live and reachable. The agent calls the already-deployed workflow and confirms it responded &mdash; giving the ops team an instant health check through conversation, without navigating to the workflow dashboard. In the data variant, the agent calls a binary-output workflow and communicates the pass/fail result in plain language.</p>
+    <div class="sc-section-title">Technical Prompt (Without Data)</div>
+    <div class="prompt-block">Prereq &mdash; deployed "hello world" workflow with webhook trigger.
+Create an agent that calls my deployed hello world n8n workflow. Agent should say "Yey" if it was able to call the workflow.</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">&#128203; Copy Prompt</button>
+    <div class="sc-section-title" style="margin-top:14px;">Technical Prompt (With Data)</div>
+    <div class="prompt-block">Create an agent that calls my deployed n8n workflow which is a 0/1 outputter.</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">&#128203; Copy Prompt</button>
+  </div>
+
+  <div class="sc-card" id="s7">
+    <div class="sc-card-header">
+      <div class="sc-num">7</div>
+      <div class="sc-meta"><div class="sc-label">Scenario 7</div><h3>Custom Agent calling workflow in same solution</h3></div>
+    </div>
+    <div class="sc-section-title">Business Use Case</div>
+    <p style="font-size:.88rem;margin-bottom:14px;">When asked to make a fair split assignment, a Joule assistant calls a same-solution workflow that generates a random integer, then uses the even or odd result to place an item &mdash; an employee, a task, a ticket &mdash; into one of two groups. The assistant responds with the number and the outcome. The workflow and agent are built and deployed together as a single unit.</p>
+    <div class="sc-section-title">Technical Prompt</div>
+    <div class="prompt-block">Create an n8n workflow that generates a random integer. Then create an agent that calls this workflow, receives the generated number, and determines whether it is even or odd, responding with the number and its result.</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">&#128203; Copy Prompt</button>
+  </div>
+
+  <div class="cta" style="margin-top:40px;">
+    <div class="cta-inner">
+      <h2>Ready to Build?</h2>
+      <p>Start with the step-by-step Invoice Exception Agent tutorial,<br>then come back here and try a scenario of your choice.</p>
+      <div class="btn-row">
+        <a href="tutorial.html" class="btn-cta">Go to Tutorial &#8594;</a>
+        <a href="index.html" class="btn-cta btn-cta--outline">Workshop Home &#8594;</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+function copyPrompt(btn){
+  var block=btn.previousElementSibling;
+  navigator.clipboard.writeText(block.textContent.trim()).then(function(){
+    var orig=btn.innerHTML;btn.innerHTML='&#10003; Copied!';
+    setTimeout(function(){btn.innerHTML=orig;},2000);
+  });
+}
+</script>
+
+<footer>
+  <p>Copyright &copy; 2026 SAP SE or an SAP affiliate company. All rights reserved. &nbsp;&middot;&nbsp; Licensed under the Apache Software License, version 2.0.</p>
+</footer>
+</body>
+</html>
