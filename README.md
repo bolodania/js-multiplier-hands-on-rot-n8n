@@ -19,7 +19,7 @@ A self-contained static HTML site for the Invoice Exception Agent hands-on sessi
 
 ## Images
 
-Screenshots in `images/` are taken directly from the Joule Studio dev landscape and correspond 1-to-1 with the tutorial steps.
+Screenshots in `images/` are taken directly from the Joule Studio int landscape and correspond 1-to-1 with the tutorial steps.
 
 ## Running Locally
 
