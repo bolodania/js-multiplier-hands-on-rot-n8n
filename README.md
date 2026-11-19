@@ -14,7 +14,7 @@ A self-contained static HTML site for the Invoice Exception Agent hands-on sessi
 
 ## Content Sources
 
-- **Tutorial content** — _"How to create Invoice Exception Agent with n8n workflow"_ (Deval's Team, Oct 2026, 37 steps)
+- **Tutorial content** — _"How to create Invoice Exception Agent with n8n workflow"_
 - **Scenario prompts** — _"Sample Scenario Prompts for n8n"_ (Doc 2, 7 scenarios)
 
 ## Images
