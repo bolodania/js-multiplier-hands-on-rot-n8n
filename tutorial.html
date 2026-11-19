@@ -22,12 +22,11 @@
   <aside class="sidebar">
     <div class="sidebar-label">Tutorial</div>
     <a class="nav-item active" href="#overview"><span class="nav-badge">&#9733;</span>Overview</a>
-    <a class="nav-item" href="#ex01"><span class="nav-badge">1</span>Create the Solution<span class="nav-dur">~5 min</span></a>
+    <a class="nav-item" href="#ex01"><span class="nav-badge">1</span>Create a New Solution<span class="nav-dur">~5 min</span></a>
     <a class="nav-item" href="#ex02"><span class="nav-badge">2</span>Review Intent<span class="nav-dur">~5 min</span></a>
-    <a class="nav-item" href="#ex03"><span class="nav-badge">3</span>Review PRD &amp; Requirements<span class="nav-dur">~10 min</span></a>
-    <a class="nav-item" href="#ex04"><span class="nav-badge">4</span>Architecture &amp; Generation<span class="nav-dur">~10 min</span></a>
-    <a class="nav-item" href="#ex05"><span class="nav-badge">5</span>Open &amp; Configure Workflow<span class="nav-dur">~10 min</span></a>
-    <a class="nav-item" href="#ex06"><span class="nav-badge">6</span>Execute &amp; Test<span class="nav-dur">~5 min</span></a>
+    <a class="nav-item" href="#ex03"><span class="nav-badge">3</span>Review PRD<span class="nav-dur">~10 min</span></a>
+    <a class="nav-item" href="#ex04"><span class="nav-badge">4</span>Review Architecture &amp; Generate Solution<span class="nav-dur">~10 min</span></a>
+    <a class="nav-item" href="#ex05"><span class="nav-badge">5</span>Explore the Generated Workflow<span class="nav-dur">~10 min</span></a>
   </aside>
 
   <main class="content">
@@ -35,7 +34,7 @@
     <section id="overview">
       <div class="session-hero">
         <div class="session-hero-inner">
-          <div class="session-code">n8n Low-Code &middot; 37 Steps</div>
+          <div class="session-code">n8n Low-Code &middot; 30 Steps</div>
           <h1>Invoice Exception Agent</h1>
           <p>Build a complete blocked-invoice release workflow from a single prompt. Joule Studio generates the n8n workflow for you &mdash; you review, approve, configure, and test.</p>
           <div class="outcome-grid">
@@ -57,8 +56,8 @@
         <div class="stage-pill"><span class="dot"></span>Review Intent &amp; PRD</div>
         <div class="stage-pill"><span class="dot"></span>Review Requirements</div>
         <div class="stage-pill"><span class="dot"></span>Generate Solution</div>
-        <div class="stage-pill"><span class="dot"></span>Open &amp; Configure n8n Workflow</div>
-        <div class="stage-pill"><span class="dot"></span>Execute &amp; Test</div>
+        <div class="stage-pill"><span class="dot"></span>Review Generated Workflow</div>
+
       </div>
     </section>
 
@@ -68,8 +67,8 @@
       <div class="ex-header">
         <div class="ex-circle">1</div>
         <div class="ex-meta">
-          <div class="ex-label">Exercise 1</div>
-          <h2>Create the Solution</h2>
+          <div class="ex-label">Step 1</div>
+          <h2>Create a New Solution</h2>
           <span class="ex-dur">~5 minutes</span>
         </div>
       </div>
@@ -80,7 +79,7 @@
         <div class="step"><div class="step-num">1</div><div class="step-body">
           <h4>Open Joule Studio Int on Chrome</h4>
           <p>Navigate to <a href="https://0210824905.eu12.sapdas.cloud.sap/new/build" target="_blank">https://0210824905.eu12.sapdas.cloud.sap/new/build</a></p>
-          <div class="screenshot"><img src="images/01_build_url.jpg" alt="Joule Studio build page" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Joule Studio &mdash; build home</div></div>
+          <div class="screenshot"><img src="images/01_open_joule_studio.jpg" alt="Joule Studio build page" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Joule Studio &mdash; build home</div></div>
         </div></div>
 
         <div class="step"><div class="step-num">2</div><div class="step-body">
@@ -100,28 +99,28 @@
 
         <div class="step"><div class="step-num">5</div><div class="step-body">
           <h4>Type &#8220;Invoice Exception Agent&#8221;</h4>
-          <div class="screenshot"><img src="images/05_type_name.jpg" alt="Workflow name typed" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Name: Invoice Exception Agent</div></div>
+          <div class="screenshot"><img src="images/05_type_name_and_textarea.jpg" alt="Workflow name typed" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Name: Invoice Exception Agent</div></div>
         </div></div>
 
         <div class="step"><div class="step-num">6</div><div class="step-body">
           <h4>Click in the &#8220;text area&#8221; field</h4>
-          <div class="screenshot"><img src="images/06_textarea_field.jpg" alt="Text area field" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Prompt text area</div></div>
+          <div class="screenshot"><img src="images/05_type_name_and_textarea.jpg" alt="Text area field" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Prompt text area</div></div>
         </div></div>
 
         <div class="step"><div class="step-num">7</div><div class="step-body">
           <h4>Type (or paste) the full workflow prompt</h4>
-          <div class="screenshot"><img src="images/07_type_prompt.jpg" alt="Prompt entered" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Full prompt entered</div></div>
+          <!-- <div class="screenshot"><img src="images/06_type_prompt.jpg" alt="Prompt entered" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Full prompt entered</div></div> -->
           <pre style="white-space:pre-wrap;">Create an n8n workflow with a webhook trigger, triggered by a Joule Agent from SAP Joule chat. The workflow reads all blocked supplier invoices from SAP S/4HANA Cloud using the SAP MCP Client, analyses each invoice using a SAP Agent to identify the block reason across Purchase Order, Goods Receipt, and Supplier Contract, presents the agent's findings to the AP Clerk in SAP Task Center using SAP Human-in-the-Loop, and — if the AP Clerk approves — releases the invoice in S/4HANA Cloud via the SAP MCP Client.</pre>
         </div></div>
 
         <div class="step"><div class="step-num">8</div><div class="step-body">
           <h4>Click &#8220;Quick Create&#8221;</h4>
-          <div class="screenshot"><img src="images/08_quick_create.jpg" alt="Quick Create button" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Quick Create selected</div></div>
+          <div class="screenshot"><img src="images/07_quick_create.jpg" alt="Quick Create button" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Quick Create selected</div></div>
         </div></div>
 
         <div class="step"><div class="step-num">9</div><div class="step-body">
           <h4>Click &#8220;Create&#8221;</h4>
-          <div class="screenshot"><img src="images/09_create.jpg" alt="Create button" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Solution creation confirmed</div></div>
+          <div class="screenshot"><img src="images/08_create.jpg" alt="Create button" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Solution creation confirmed</div></div>
         </div></div>
       </div>
     </section>
@@ -132,8 +131,8 @@
       <div class="ex-header">
         <div class="ex-circle">2</div>
         <div class="ex-meta">
-          <div class="ex-label">Exercise 2</div>
-          <h2>Review Intent Analysis</h2>
+          <div class="ex-label">Step 2</div>
+          <h2>Review Intent Summary</h2>
           <span class="ex-dur">~5 minutes</span>
         </div>
       </div>
@@ -143,27 +142,27 @@
 
         <div class="step"><div class="step-num">10</div><div class="step-body">
           <h4>Click &#8220;Intent Summary&#8221;</h4>
-          <div class="screenshot"><img src="images/10_intent_summary.jpg" alt="Intent Summary" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Intent Summary generated</div></div>
+          <div class="screenshot"><img src="images/09_intent_summary.jpg" alt="Intent Summary" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Intent Summary generated</div></div>
         </div></div>
 
         <div class="step"><div class="step-num">11</div><div class="step-body">
           <h4>Minimize the chat by clicking the icon</h4>
-          <div class="screenshot"><img src="images/11_minimize_chat.jpg" alt="Minimize chat" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Chat minimized</div></div>
+          <div class="screenshot"><img src="images/10_minimize_chat.jpg" alt="Minimize chat" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Chat minimized</div></div>
         </div></div>
 
         <div class="step"><div class="step-num">12</div><div class="step-body">
           <h4>Click &#8220;Process Hierarchy&#8221; and review</h4>
-          <div class="screenshot"><img src="images/12_process_hierarchy.jpg" alt="Process Hierarchy" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Process Hierarchy view</div></div>
+          <div class="screenshot"><img src="images/11_process_hierarchy.jpg" alt="Process Hierarchy" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Process Hierarchy view</div></div>
         </div></div>
 
         <div class="step"><div class="step-num">13</div><div class="step-body">
           <h4>Click &#8220;Recommended Solution&#8221; and review</h4>
-          <div class="screenshot"><img src="images/13_recommended_solution.jpg" alt="Recommended Solution" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Recommended Solution</div></div>
+          <div class="screenshot"><img src="images/12_recommended_solution.jpg" alt="Recommended Solution" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Recommended Solution</div></div>
         </div></div>
 
         <div class="step"><div class="step-num">14</div><div class="step-body">
           <h4>Open the chat again by clicking the icon</h4>
-          <div class="screenshot"><img src="images/14_open_chat.jpg" alt="Open chat again" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Chat reopened</div></div>
+          <div class="screenshot"><img src="images/13_open_chat.jpg" alt="Open chat again" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Chat reopened</div></div>
         </div></div>
       </div>
     </section>
@@ -174,8 +173,8 @@
       <div class="ex-header">
         <div class="ex-circle">3</div>
         <div class="ex-meta">
-          <div class="ex-label">Exercise 3</div>
-          <h2>Review PRD &amp; Requirements</h2>
+          <div class="ex-label">Step 3</div>
+          <h2>Review PRD</h2>
           <span class="ex-dur">~10 minutes</span>
         </div>
       </div>
@@ -185,45 +184,20 @@
 
         <div class="step"><div class="step-num">15</div><div class="step-body">
           <h4>See the status &#8220;Proceeding with PRD generation.&#8221;</h4>
-          <div class="screenshot"><img src="images/15_prd_status.jpg" alt="PRD generation status" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">PRD generation in progress</div></div>
+          <div class="screenshot"><img src="images/14_prd_status.jpg" alt="PRD generation status" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">PRD generation in progress</div></div>
         </div></div>
 
         <div class="step"><div class="step-num">16</div><div class="step-body">
           <h4>Click &#8220;Requirements&#8221; once it generates and the green tick appears</h4>
-          <div class="screenshot"><img src="images/16_requirements.jpg" alt="Requirements list" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Requirements generated (green tick)</div></div>
+          <div class="screenshot"><img src="images/15_requirements.jpg" alt="Requirements list" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Requirements generated (green tick)</div></div>
         </div></div>
 
         <div class="step"><div class="step-num">17</div><div class="step-body">
-          <h4>Click &#8220;R1: Webhook Trigger from Joule Agent&#8221;</h4>
-          <div class="screenshot"><img src="images/17_r1_webhook.jpg" alt="R1 Webhook Trigger" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">R1: Webhook Trigger from Joule Agent</div></div>
-        </div></div>
-
-        <div class="step"><div class="step-num">18</div><div class="step-body">
-          <h4>Click &#8220;R2: Read All Blocked Supplier Invoices from S/4HANA&#8221;</h4>
-          <div class="screenshot"><img src="images/18_r2_blocked_invoices.jpg" alt="R2 Blocked Invoices" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">R2: Read Blocked Supplier Invoices</div></div>
-        </div></div>
-
-        <div class="step"><div class="step-num">19</div><div class="step-body">
-          <h4>Click &#8220;R3: AI-Powered Block Reason Analysis per Invoice&#8221;</h4>
-          <div class="screenshot"><img src="images/19_r3_analysis.jpg" alt="R3 AI Analysis" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">R3: AI-Powered Block Reason Analysis</div></div>
-        </div></div>
-
-        <div class="step"><div class="step-num">20</div><div class="step-body">
-          <h4>Click &#8220;R4: AP Clerk Approval via SAP Task Center&#8221;</h4>
-          <div class="screenshot"><img src="images/20_r4_task_center.jpg" alt="R4 Task Center" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">R4: AP Clerk Approval via SAP Task Center</div></div>
-        </div></div>
-
-        <div class="step"><div class="step-num">21</div><div class="step-body">
-          <h4>Click &#8220;R5: Invoice Release in S/4HANA on Approval&#8221;</h4>
-          <div class="screenshot"><img src="images/21_r5_invoice_release.jpg" alt="R5 Invoice Release" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">R5: Invoice Release in S/4HANA</div></div>
-        </div></div>
-
-        <div class="step"><div class="step-num">22</div><div class="step-body">
-          <h4>Click &#8220;R6: Summary Response Returned to Joule Agent&#8221;</h4>
-          <div class="screenshot"><img src="images/22_r6_summary_response.jpg" alt="R6 Summary Response" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">R6: Summary Response to Joule Agent</div></div>
+          <h4>Review Must-Have Requirements and other sections of PRD</h4>
+          <p>Joule Studio generates requirements dynamically. Click through the Must-Have Requirements and any other sections that appear.</p>
+          <div class="screenshot"><img src="images/16_r1_webhook.jpg" alt="Requirements review" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Review Must-Have Requirements</div></div>
         </div></div>
       </div>
-    </section>
 
     <hr class="ex-divider">
 
@@ -231,8 +205,8 @@
       <div class="ex-header">
         <div class="ex-circle">4</div>
         <div class="ex-meta">
-          <div class="ex-label">Exercise 4</div>
-          <h2>Architecture &amp; Solution Generation</h2>
+          <div class="ex-label">Step 4</div>
+          <h2>Review Architecture &amp; Generate Solution</h2>
           <span class="ex-dur">~10 minutes</span>
         </div>
       </div>
@@ -242,33 +216,30 @@
 
         <div class="step"><div class="step-num">23</div><div class="step-body">
           <h4>Review the Solution Architecture &mdash; &#8220;Architecture Overview&#8221;</h4>
-          <div class="screenshot"><img src="images/23_architecture_overview.jpg" alt="Architecture Overview" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Solution Architecture overview</div></div>
+          <div class="screenshot"><img src="images/22_architecture_overview.jpg" alt="Architecture Overview" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Solution Architecture overview</div></div>
         </div></div>
 
         <div class="step"><div class="step-num">24</div><div class="step-body">
           <h4>Click &#8220;Show Conversation&#8221; button</h4>
-          <div class="screenshot"><img src="images/24_show_conversation.jpg" alt="Show Conversation" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Show Conversation panel</div></div>
+          <div class="screenshot"><img src="images/23_show_conversation.jpg" alt="Show Conversation" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Show Conversation panel</div></div>
         </div></div>
 
         <div class="step"><div class="step-num">25</div><div class="step-body">
-          <h4>Select &#8220;Use a placeholder&#8221; on the chat</h4>
-          <div class="screenshot"><img src="images/25_placeholder.jpg" alt="Use a placeholder" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Use a placeholder selected</div></div>
+          <h4>Reply to Joule Studio questions and let it generate the solution</h4>
+          <p>Joule Studio may ask clarifying questions in the chat. Answer them in the best way that fits your scenario &#8212; there is no single correct answer. Once you reply, Joule Studio will proceed to generate the full solution automatically.</p>
+          <div class="callout tip"><div class="callout-label">Tip</div>If you are unsure, pick the closest real-world option or use a placeholder. The goal is to unblock generation, not to set production values.</div>
+          <div class="screenshot"><img src="images/24_placeholder.jpg" alt="Reply to Joule Studio" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Answer Joule Studio&#8217;s questions to proceed</div></div>
         </div></div>
 
         <div class="step"><div class="step-num">26</div><div class="step-body">
-          <h4>Click &#8220;Submit Answer&#8221;</h4>
-          <div class="screenshot"><img src="images/26_submit_answer.jpg" alt="Submit Answer" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Answer submitted</div></div>
+          <h4>Wait for generation of Specification and Solution</h4>
+          <p>Wait until the green tick appears next to the Solution artifact.</p>
+          <!-- <div class="screenshot"><img src="images/26_wait_generation.jpg" alt="Waiting for solution generation" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Solution generating&hellip;</div></div> -->
         </div></div>
 
         <div class="step"><div class="step-num">27</div><div class="step-body">
-          <h4>Wait for Solution generation</h4>
-          <p>Wait until the green tick appears next to the Solution artifact.</p>
-          <div class="screenshot"><img src="images/27_wait_generation.jpg" alt="Waiting for solution generation" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Solution generating&hellip;</div></div>
-        </div></div>
-
-        <div class="step"><div class="step-num">28</div><div class="step-body">
           <h4>Click &#8220;Solution Artifacts&#8221;</h4>
-          <div class="screenshot"><img src="images/28_solution_artifacts.jpg" alt="Solution Artifacts" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Solution Artifacts ready</div></div>
+          <div class="screenshot"><img src="images/27_solution_artifacts.jpg" alt="Solution Artifacts" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Solution Artifacts ready</div></div>
         </div></div>
       </div>
     </section>
@@ -279,106 +250,47 @@
       <div class="ex-header">
         <div class="ex-circle">5</div>
         <div class="ex-meta">
-          <div class="ex-label">Exercise 5</div>
-          <h2>Open &amp; Configure the Workflow</h2>
+          <div class="ex-label">Step 5</div>
+          <h2>Explore the Generated Workflow</h2>
           <span class="ex-dur">~10 minutes</span>
         </div>
       </div>
-      <p style="margin-bottom:24px;">Open the generated n8n workflow, navigate to the &#8220;Approve Blocked Invoice Release&#8221; node, and set your email address as the Task Center recipient.</p>
+      <p style="margin-bottom:24px;">Review the generated n8n workflow and explore how the nodes are connected.</p>
       <div class="ex-section">
         <h3>Steps</h3>
 
+        <div class="step"><div class="step-num">28</div><div class="step-body">
+          <h4>Click on the workflow artifact</h4>
+          <div class="screenshot"><img src="images/28_open_workflow.jpg" alt="Open blocked-invoice-release-workflow" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">blocked-invoice-release-workflow</div></div>
+        </div></div>
+
         <div class="step"><div class="step-num">29</div><div class="step-body">
-          <h4>Click &#8220;blocked-invoice-release-workflow&#8221;</h4>
-          <div class="screenshot"><img src="images/29_open_workflow.jpg" alt="Open blocked-invoice-release-workflow" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">blocked-invoice-release-workflow</div></div>
+          <h4>Click &#8220;Hide Conversation&#8221; button</h4>
+          <div class="screenshot"><img src="images/29_hide_conversation.jpg" alt="Hide Conversation" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Conversation panel hidden &mdash; more space for the workflow canvas</div></div>
         </div></div>
 
         <div class="step"><div class="step-num">30</div><div class="step-body">
-          <h4>Click &#8220;Hide Conversation&#8221; button</h4>
-          <div class="screenshot"><img src="images/30_hide_conversation.jpg" alt="Hide Conversation" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Conversation panel hidden &mdash; more space for the workflow canvas</div></div>
-        </div></div>
-
-        <div class="step"><div class="step-num">31</div><div class="step-body">
           <h4>Click &#8220;Zoom In&#8221; a few times until you are comfortable with the size</h4>
-          <div class="screenshot"><img src="images/31_zoom_in.jpg" alt="Zoom In" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">n8n workflow zoomed in</div></div>
-        </div></div>
-
-        <div class="step"><div class="step-num">32</div><div class="step-body">
-          <h4>Click the &#8220;Approve Blocked Invoice Release&#8221; node</h4>
-          <div class="screenshot"><img src="images/32_approve_node.jpg" alt="Approve Blocked Invoice Release node" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Approve Blocked Invoice Release node opened</div></div>
-        </div></div>
-
-        <div class="step"><div class="step-num">33</div><div class="step-body">
-          <h4>Scroll down and find Recipient Email &mdash; click in the &#8220;text&#8221; input field</h4>
-          <div class="callout tip">
-            <div class="callout-label">Tip</div>
-            Type your own email address. You will receive the AP Clerk approval notification at this address when the workflow runs.
-          </div>
-          <div class="screenshot"><img src="images/33_recipient_email.jpg" alt="Recipient Email field" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">Recipient Email input</div></div>
+          <div class="screenshot"><img src="images/30_zoom_in.jpg" alt="Zoom In" loading="lazy" onclick="openLightbox(this)"><div class="screenshot-caption">n8n workflow zoomed in</div></div>
         </div></div>
       </div>
     </section>
-
-    <hr class="ex-divider">
-
-    <section id="ex06">
-      <div class="ex-header">
-        <div class="ex-circle">6</div>
-        <div class="ex-meta">
-          <div class="ex-label">Exercise 6</div>
-          <h2>Execute &amp; Test</h2>
-          <span class="ex-dur">~5 minutes</span>
-        </div>
-      </div>
-      <p style="margin-bottom:24px;">Type your email, close the node panel, and execute the workflow to test the full end-to-end flow.</p>
-      <div class="ex-section">
-        <h3>Steps</h3>
-
-        <div class="step"><div class="step-num">34</div><div class="step-body">
-          <h4>Type your email address in the Recipient Email field</h4>
-          <p>Enter the email address at which you want to receive the Task Center notification.</p>
-        </div></div>
-
-        <div class="step"><div class="step-num">35</div><div class="step-body">
-          <h4>Click the &#8220;Close&#8221; button</h4>
-          <p>Close the node configuration panel to return to the workflow canvas.</p>
-        </div></div>
-
-        <div class="step"><div class="step-num">36</div><div class="step-body">
-          <h4>Click the &#8220;Execute Workflow&#8221; button to test</h4>
-          <p>Joule Studio will trigger the workflow. Watch for the execution trace in the canvas &mdash; each node should turn green as it completes.</p>
-          <div class="callout tip">
-            <div class="callout-label">What to expect</div>
-            <ol style="list-style:decimal;padding-left:20px;margin-top:4px;">
-              <li style="padding:2px 0;">Webhook node activates.</li>
-              <li style="padding:2px 0;">S/4HANA blocked invoices are read via SAP MCP Client.</li>
-              <li style="padding:2px 0;">SAP Agent analyses each invoice for block reason.</li>
-              <li style="padding:2px 0;">A Task Center notification arrives in your inbox.</li>
-              <li style="padding:2px 0;">On approval, the invoice is released in S/4HANA.</li>
-              <li style="padding:2px 0;">A summary response is returned to Joule.</li>
-            </ol>
-          </div>
-        </div></div>
-
-        <div class="step"><div class="step-num">37</div><div class="step-body">
-          <h4>&#127881; Congratulations &mdash; your Invoice Exception Agent is live!</h4>
-          <p>You have built and tested a fully-functional AI workflow from a single prompt. The same approach applies to any of the seven scenarios in the <a href="scenarios.html">Scenarios page</a>.</p>
-        </div></div>
-      </div>
 
       <div style="margin-top:32px;background:linear-gradient(135deg,#160B38,#2815A6,#4013E3);border-radius:14px;padding:28px 32px;color:white;">
-        <h4 style="font-size:1rem;font-weight:700;margin-bottom:14px;opacity:.9;">What you built in this session</h4>
-        <ol style="list-style:decimal;padding-left:22px;font-size:.88rem;line-height:1.8;opacity:.88;">
-          <li>Created an n8n Workflow solution in Joule Studio from a natural-language prompt</li>
-          <li>Reviewed the AI-generated Intent Analysis, Process Hierarchy, and Recommended Solution</li>
-          <li>Reviewed all six PRD requirements (R1&ndash;R6)</li>
-          <li>Reviewed the Solution Architecture and triggered solution generation</li>
-          <li>Opened the generated n8n workflow and configured the Task Center recipient email</li>
-          <li>Executed the workflow end-to-end</li>
-        </ol>
-        <p style="margin-top:16px;font-size:.88rem;opacity:.8;">Explore the <a href="scenarios.html" style="color:#F3B2E9;font-weight:700;">7 Sample Scenarios</a> to continue building with Joule Studio n8n workflows.</p>
+        <h4 style="font-size:1rem;font-weight:700;margin-bottom:16px;opacity:.9;">How the workflow components work together</h4>
+        <div style="display:grid;gap:14px;font-size:.86rem;line-height:1.6;opacity:.9;">
+          <div><strong>1. Retrieve blocked invoices</strong><br>The SAP MCP Client retrieves blocked supplier invoices from SAP S/4HANA Cloud.</div>
+          <div><strong>2. Enrich business context</strong><br>The workflow retrieves the corresponding purchase orders, goods receipts, and supplier contracts.</div>
+          <div><strong>3. Analyze exceptions</strong><br>An embedded AI Agent node analyzes potential discrepancies and identifies likely block reasons.</div>
+          <div><strong>4. Request human approval</strong><br>SAP Human-in-the-Loop routes the findings to an AP clerk for review and approval.</div>
+          <div><strong>5. Process the decision</strong><br>Based on the approval outcome, the workflow is designed to release approved invoices or handle rejected requests.</div>
+        </div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.15);font-size:.85rem;">
+          <strong>This hands-on exercise focuses on workflow generation and exploration.</strong><br>
+          You can continue exploring the scenario by configuring the AI Agent, locally testing it, and deploying.
+        </div>
+        <p style="margin-top:16px;font-size:.85rem;opacity:.8;">Explore the <a href="scenarios.html" style="color:#F3B2E9;font-weight:700;">7 Sample Scenarios</a> to continue building with Joule Studio n8n workflows.</p>
       </div>
-    </section>
 
   </main>
 </div>

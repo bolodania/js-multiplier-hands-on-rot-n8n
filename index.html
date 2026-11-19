@@ -41,19 +41,22 @@
         <div class="flow-pill">Recommended Solution</div><span class="flow-arrow">&#8594;</span>
         <div class="flow-pill">PRD / Requirements</div><span class="flow-arrow">&#8594;</span>
         <div class="flow-pill">Solution Architecture</div><span class="flow-arrow">&#8594;</span>
-        <div class="flow-pill">n8n Workflow</div><span class="flow-arrow">&#8594;</span>
-        <div class="flow-pill">Test</div>
+        <div class="flow-pill">n8n Workflow</div>
       </div>
-      <p>The result is a deployable n8n workflow on SAP Business AI Platform &mdash; built entirely from a prompt, reviewed and approved at each stage by you.</p>
+      <p>The result is a generated n8n workflow on SAP Business AI Platform &mdash; built entirely from a prompt, reviewed and approved at each stage by you.</p>
     </div>
   </section>
 
   <section id="requirements">
     <div class="section-header">
       <h2>What You Will Build</h2>
-      <p>A six-requirement end-to-end workflow covering the full invoice exception management lifecycle</p>
+      <p>A sample set of requirements illustrating the invoice exception management lifecycle &mdash; Joule Studio generates requirements dynamically, so yours may vary slightly</p>
     </div>
     <div class="card">
+      <div class="callout note" style="margin-bottom:16px;">
+        <div class="callout-label">Representative Sample</div>
+        These requirements are indicative. Joule Studio derives requirements from your intent at runtime, so the exact wording and number of requirements may differ from what you see here.
+      </div>
       <div class="prereq-list">
         <div class="prereq-item"><div class="prereq-icon">&#128279;</div><div><strong>R1 &mdash; Webhook Trigger from Joule Agent</strong><p>The workflow is triggered by a Joule Agent from SAP Joule chat via a webhook.</p></div></div>
         <div class="prereq-item"><div class="prereq-icon">&#128196;</div><div><strong>R2 &mdash; Read All Blocked Supplier Invoices from S/4HANA</strong><p>Fetches all blocked supplier invoices from SAP S/4HANA Cloud using the SAP MCP Client.</p></div></div>
@@ -76,7 +79,6 @@
         <div class="prereq-item"><div class="prereq-icon">&#127760;</div><div><strong>Google Chrome</strong><p>Use Chrome for the best Joule Studio experience.</p></div></div>
         <div class="prereq-item"><div class="prereq-icon">&#9729;&#65039;</div><div><strong>Joule Studio Access (Int Landscape)</strong><p>Navigate to <a href="https://0210824905.eu12.sapdas.cloud.sap/new/build" target="_blank">https://0210824905.eu12.sapdas.cloud.sap/new/build</a> in Chrome. You need a valid Joule Studio account.</p></div></div>
         <div class="prereq-item"><div class="prereq-icon">&#128231;</div><div><strong>Your Email Address</strong><p>Required to configure the SAP Task Center node &mdash; you will receive the AP Clerk approval notification at this address.</p></div></div>
-        <div class="prereq-item"><div class="prereq-icon">&#128274;</div><div><strong>SAP Corporate Network or VPN</strong><p>Required to reach the Joule Studio int landscape and S/4HANA Cloud system.</p></div></div>
       </div>
     </div>
     <div class="card" style="margin-top:16px;">
@@ -99,10 +101,13 @@
       </div>
     </div>
   </div>
-  <section id="scenarios">
-    <div class="section-header">
-      <h2>Sample Scenarios</h2>
-      <p>Seven ready-to-use prompt scenarios covering a range of n8n workflow patterns &mdash; explore independently after the main exercise</p>
+  <section id="scenarios" style="background:var(--code-bg);border:1px solid var(--border);border-radius:20px;padding:36px 32px;margin-top:48px;">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:24px;">
+      <div>
+        <h2 style="font-size:1.55rem;font-weight:700;color:var(--violet);letter-spacing:-.02em;">What Else Can You Build?</h2>
+        <p style="color:var(--text-muted);margin-top:5px;">Seven ready-to-use prompt scenarios &mdash; try them independently after the main exercise</p>
+      </div>
+      <a href="scenarios.html" style="display:inline-block;background:linear-gradient(135deg,var(--violet),var(--blue-violet));color:white;padding:10px 24px;border-radius:999px;font-size:.85rem;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0;margin-top:4px;">View All Prompts &#8594;</a>
     </div>
     <div class="scenario-grid">
       <div class="scenario-card"><div style="display:flex;align-items:center;gap:10px;"><div class="scenario-num">1</div><div class="scenario-title">Workflow with SAP Task Center Node</div></div><div class="scenario-desc">Webhook-triggered workflow that creates a Task Center notification with a title from the incoming data.</div><a href="scenarios.html#s1" style="font-size:.8rem;font-weight:600;margin-top:4px;">View prompt &#8594;</a></div>
